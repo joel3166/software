@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>파일 분석 웹 애플리케이션</title>
+</head>
+<body>
+    <h1>안녕하세요! 파일 분석 웹 애플리케이션입니다.</h1>
+
+    <form action="/analyze" method="post" enctype="multipart/form-data">
+        <div>
+            <label for="image">이미지 파일 선택:</label>
+            <input type="file" id="image" name="image" accept="image/*">
+        </div>
+        <div>
+            <label for="text">텍스트 파일 선택 (.txt):</label>
+            <input type="file" id="text" name="text" accept=".txt">
+        </div>
+        <input type="submit" value="분석 시작">
+    </form>
+
+    <div id="result">
+        <img id="analyzed-image">
+        <p id="analysis-result"></p>
+        <p id="image-size"></p> <!-- 이미지 바이트 크기를 표시할 요소 -->
+        <p id="text-content"></p> <!-- 텍스트 파일 내용을 표시할 요소 -->
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
